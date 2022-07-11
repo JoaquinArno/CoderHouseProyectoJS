@@ -1,0 +1,89 @@
+* { 
+
+ margin:0;
+ padding:0;
+
+}
+
+body {
+
+ background-image: url(https://images.all-free-download.com/images/graphicwebp/wood_grunge_background_516723.webp);
+
+
+}
+
+table.chess_table {
+
+ width: 550px; 
+ height: 550px;
+ min-width:8em; 
+ max-width:64em;
+ background-color: rgb(163, 79, 23);  
+ margin:0 auto; 
+ padding:0;
+ margin-top: 1.75%;
+ border-spacing: 0;
+ box-sizing: border-box;
+ border: 3px solid rgb(34, 17, 6);
+ border-radius: 2px;
+ box-shadow: -2px 5px 37px -4px rgba(0,0,0,0.83);
+ -webkit-box-shadow: -2px 5px 37px -4px rgba(0,0,0,0.83);
+ -moz-box-shadow: -2px 5px 37px -4px rgba(0,0,0,0.83);
+
+}
+
+table.chess_table tr td {
+
+ margin: 0; 
+ padding: 0;
+ font-size: 2em; 
+ font-family: sans-serif; 
+ text-align: center;
+ border: 2px solid black;
+
+}
+
+table.chess_table tr:nth-child(odd) td:nth-child(odd),
+table.chess_table tr:nth-child(even) td:nth-child(even){
+
+ background-color: rgb(211, 126, 70);
+
+}
+
+table.chess_table tr:nth-child(odd) td:nth-child(even),
+table.chess_table tr:nth-child(even) td:nth-child(odd){
+
+ background-color: rgb(81, 40, 12);
+
+}
+
+table.chess_table tr td.WP { /* blancs */
+
+ color: wheat; 
+
+}
+
+table.chess_table tr td.BP { /* noirs */
+
+ color: rgb(0, 0, 0); 
+
+}
+
+table.chess_table tr th {
+
+ color: black; 
+ font-size:0.70em;
+}
+
+.cell {
+
+height: 60px;
+width: 60px;
+
+}
+
+/* table.chess_table tr th.turn_square {
+
+  border: 0.1em solid black;
+  
+} */
