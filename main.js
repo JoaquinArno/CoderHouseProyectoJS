@@ -32,15 +32,15 @@ console.log(piezaN + posicionN);
 
 function sugerencia () {
 
-if (piezaN != "Caballo") {
+if (piezaB != "Caballo") {
 
-   console.log("¡Defende tu peón! (Negras)")
+   console.log("Sugerencia: Defende a tu peón con el próximo movimiento (Blancas)")
 
 }
 
 else {
 
-   console.log("Avanzá con peón a las posiciopnes defendidas por tu caballo")
+   console.log("Sugerencia: Avanzá con peón a las posiciopnes defendidas por tu caballo (Blancas)")
 
 }
 
