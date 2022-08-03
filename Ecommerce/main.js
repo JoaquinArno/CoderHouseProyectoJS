@@ -1,64 +1,88 @@
-function ingresoNombre() {
+// function ingresoNombre() {
 
-    let usuario = prompt ('Ingresa tu nombre y apellido')
+//     let usuario = prompt ('Ingresa tu nombre y apellido')
 
-    if (usuario >= 0) {
+//     if (usuario >= 0) {
 
-        alert ('Ingresa un nombre valido.')
+//         alert ('Ingresa un nombre valido.')
         
-    }
+//     }
 
-    else {
+//     else {
 
-        alert ('Has ingresado como ' + usuario + '.')
+//         alert ('Has ingresado como ' + usuario + '.')
        
-    }
+//     }
 
-}
+// }
 
-ingresoNombre();
-
-
-
-function Libro(tapa, titulo, autor, genero, paginas, stock, precio) {
-
-    this.tapa = tapa;
-    this.titulo = titulo;
-    this.autor = autor;
-    this.genero = genero;
-    this.paginas = paginas;
-    this.stock = stock;
-    this. precio = precio;
-
-}
-
-const libro1 = new Libro('Dura','El Señor de los Anillos', 'Tolkien', 'Fantasía', 1200, 150, 4500);
-const libro2 = new Libro('Blanda','1984', 'Orwell', 'Ciencia ficcon', 320, 100, 2700);
-const libro3 = new Libro('Blanda','Farenheit 451', 'Bradbury', 'Ciencia ficcon', 280, 120, 3000);
-const libro4 = new Libro('Dura','Oliver Twist', 'Dickens', 'Drama', 500, 180, 3500);
-const libro5 = new Libro('Blanda','Demian', 'Hesse', 'Novela filosofica', 200, 200, 2500);
-const libro6 = new Libro('Dura','Macbeth', 'Shakespeare', 'Tragedia', 130, 90, 3600);
-
-const carrito = [];
-
-function agregarProducto(producto) {
-
-    carrito.push(producto);
-    console.log(carrito);
-
-}
-
-agregarProducto(libro1)
-agregarProducto(libro2)
-agregarProducto(libro3)
-agregarProducto(libro4)
-agregarProducto(libro5)
-agregarProducto(libro6)
+// ingresoNombre();
 
 
+const articulos = [
 
-const resultado = carrito.find((el) => el.titulo === "Farenheit 451")
-const resultado2 = carrito.filter((el) => el.stock >= 120)
+ {id:1, tapa:'Dura', titulo:'El Señor de los Anillos', autor:'J. R. R. Tolkien', genero:'Fantasía', paginas:1200, stock:150, precio:"$4500", 
+ img:"https://infoliteraria.com/wp-content/uploads/2022/04/El-senor-de-los-anillos-ilustrado-683x1024.jpg.webp"},
 
-console.log(resultado)
-console.log(resultado2)
+ {id:2, tapa:'Blanda', titulo:'1984', autor:'George Orwell', genero:'Ciencia ficcon', paginas:320, stock:100, precio:"$2700", 
+ img:"https://images.cdn1.buscalibre.com/fit-in/360x360/10/42/10426f9e9ae4f7cd9eb5d33cef5aa143.jpg"},
+
+ {id:3, tapa:'Blanda', titulo:'Farenheit 451', autor:'Ray Bradbury', genero:'Ciencia ficcon', paginas:280, stock:120, precio:"$3000", 
+ img:"https://images.cdn1.buscalibre.com/fit-in/360x360/bd/92/bd920ce8ea72090a6277dc9ee4c87ea5.jpg"},
+
+ {id:4, tapa:'Dura', titulo:'Oliver Twist', autor:'Charles Dickens', genero:'Drama', paginas:500, stock:180, precio:"$3500", 
+ img:"https://resumen.club/wp-content/uploads/2019/05/oliver-twist-700x1150.jpg"},
+
+ {id:5, tapa:'Blanda', titulo:'Demian', autor:'Herman Hesse', genero:'Novela filosófica', paginas:200, stock:200, precio:"$2500", 
+ img:"https://images-na.ssl-images-amazon.com/images/I/81P8IMpd7PL.jpg"},
+
+ {id:6, tapa:'Blanda', titulo:'Macbeth', autor:'William Shakespeare', genero:'Tragedia', paginas:130, stock:90, precio:"$3600", 
+ img:"https://idunneditorial.com/wp-content/uploads/2016/09/Mcbeth.jpg"},
+ 
+ {id:7, tapa:'Blanda', titulo:'Hambre', autor:'Knut Hamsun', genero:'Drama', paginas:150, stock:300, precio:"$3000", 
+ img:"https://quelibroleo.com/images/libros/libro_1323534889.jpg"},
+
+ {id:8, tapa:'Dura', titulo:'La Divina Comedia', autor:'Dante Alighieri', genero:'Epopeya', paginas:322, stock:150, precio:"$2900", 
+ img:"https://images.cdn3.buscalibre.com/fit-in/360x360/0b/7a/0b7a0edcdb38d4fe128b379368d1abe4.jpg"},
+
+];
+
+
+articulos.forEach((articulo) => {
+    const idButton = `agregar-carrito${articulo.id}`
+    document.getElementById("section-card").innerHTML += 
+    
+    `<div class="card h-100">
+            <img class="card-img-top" src="${articulo.img}" alt="..." />
+            <div class="card-body p-4">
+            <div class="text-center cabecera-card">
+                <h5 class="fw-bolder">${articulo.titulo}</h5>
+                ${articulo.autor}
+            </div>
+
+            <div class= "ficha">
+                <p><br>${articulo.genero}<br>
+                ${articulo.paginas} páginas</p>
+            </div> 
+            <div class="text-center precio">
+            ${articulo.precio}
+            </div>
+
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" id= "${idButton}">Añadir al carrito</a></div>
+            </div>
+        </div>
+    </div>`;
+});
+
+articulos.forEach((articulo) => {
+
+    const idButton = `agregar-carrito${articulo.id}`
+    document.getElementById(idButton).addEventListener('click', () => {
+
+    alert("Producto añadido al carrito");     
+    })
+});
+
+
