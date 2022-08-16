@@ -73,6 +73,13 @@ articulos.forEach((articulo) => {
     const total = carrito.reduce ((acumulador, articulo) => acumulador + articulo.precio, 0);
     document.getElementById("total-carrito").innerHTML = `${carrito.length}  - $${total}`;
 
+    Swal.fire({
+        title: 'Excelente!',
+        text: 'Agregaste el producto al carrito',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      })
+
     })
 });
 
