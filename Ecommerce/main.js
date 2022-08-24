@@ -6,6 +6,7 @@ const total = carrito.reduce ((acumulador, articulo) => acumulador + articulo.pr
 
 document.getElementById("total-carrito").innerHTML = `${carrito.length}  - $${total}`;
 
+
 const articulos = [
 
  {id:1, tapa:'Dura', titulo:'El Señor de los Anillos', autor:'J. R. R. Tolkien', genero:'Fantasía', paginas:1200, stock:150, precio:4500, 
@@ -50,9 +51,10 @@ articulos.forEach((articulo) => {
             <div class= "ficha">
                 <p><br>${articulo.genero}<br>
                 ${articulo.paginas} páginas</p>
-            </div> 
-            <div class="text-center precio">
-            $${articulo.precio}
+            </div>
+
+            <div class="text-center precio" id= "precio-dolar">
+              $${articulo.precio}
             </div>
 
             </div>
@@ -62,6 +64,7 @@ articulos.forEach((articulo) => {
         </div>
     </div>`;
 });
+
 
 articulos.forEach((articulo) => {
 
@@ -84,3 +87,8 @@ articulos.forEach((articulo) => {
 });
 
 
+fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
+ .then( (resp) => resp.json() )
+ .then( (data) => {
+    console.log( data[1].casa.venta )
+})
