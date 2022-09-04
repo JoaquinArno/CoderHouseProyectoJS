@@ -2487,8 +2487,8 @@ textarea.form-control-lg {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+  /* -webkit-print-color-adjust: exact;
+          color-adjust: exact; */
 }
 .form-check-input[type=checkbox] {
   border-radius: 0.25em;
@@ -11285,4 +11285,48 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+.logo {
+
+  width: 100px;
+
+}
+
+.carrito-icon {
+
+  width: 20px;
+
+}
+
+.navbar {
+
+height: 97px;
+
+}
+
+.section {
+
+  background-image: url("Imagenes/fondo.jpg");
+
+
+}
+
+.titulo{
+
+font-size: 25px;
+
+}
+
+.precio {
+
+font-weight: bold;
+
+}
+
+.ficha {
+
+ font-style: oblique;
+ font-size: 15px;
+
 }
