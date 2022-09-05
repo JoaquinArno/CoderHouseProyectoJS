@@ -15,7 +15,6 @@ document.getElementById("elementos-carrito").innerHTML +=
       <td><img src="${articulo.img}" style="width:75px"></td>
       <td>${articulo.titulo}</td>
       <td>$${articulo.precio}</td>
-      <td><button class= "boton-quitar">x</button></td>
    </tr>`
 
 })
@@ -135,15 +134,13 @@ articulos.forEach((articulo) => {
 
             document.getElementById("elementos-carrito").innerHTML += 
             
-               `<tr>
-                  <th scope="row">${articulo.id}</th>
-                  <td><img src="${articulo.img}" style="width:75px"></td>
-                  <td>${articulo.titulo}</td>
-                  <td>$${articulo.precio}</td>
-                  <td><button class="boton-quitar" type="button">x</button></td>
-               </tr>`
-            
-            })
+            `<tr>
+                <th scope="row">${articulo.id}</th>
+                <td><img src="${articulo.img}" style="width:75px"></td>
+                <td>${articulo.titulo}</td>
+                <td>$${articulo.precio}</td>
+            </tr>`             
+        })
 
         Swal.fire({
             position: 'top-end',
@@ -154,6 +151,8 @@ articulos.forEach((articulo) => {
         })
     })
 });
+
+
 
 document.getElementById("vaciar-carrito").addEventListener('click', () => {
 
