@@ -16,7 +16,6 @@ document.getElementById("elementos-carrito").innerHTML +=
       <td>${articulo.titulo}</td>
       <td>$${articulo.precio}</td>
    </tr>`
-
 })
 
 
