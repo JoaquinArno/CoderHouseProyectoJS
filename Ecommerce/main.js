@@ -6,6 +6,20 @@ const total = carrito.reduce((acumulador, articulo) => acumulador + articulo.pre
 
 document.getElementById("total-carrito").innerHTML = `${carrito.length}  - $${total}`;
 
+carrito.forEach ((articulo) => {
+
+document.getElementById("elementos-carrito").innerHTML += 
+
+   `<tr>
+      <th scope="row">${articulo.id}</th>
+      <td><img src="${articulo.img}" style="width:75px"></td>
+      <td>${articulo.titulo}</td>
+      <td>$${articulo.precio}</td>
+      <td><button class= "boton-quitar">x</button></td>
+   </tr>`
+
+})
+
 
 const articulos = [
 
@@ -89,7 +103,7 @@ articulos.forEach((articulo) => {
                 ${articulo.paginas} páginas</p>
             </div>
 
-            <div class="text-center precio" id= "precio-dolar">
+            <div class="text-center precio">
               $${articulo.precio}
             </div>
 
@@ -115,16 +129,57 @@ articulos.forEach((articulo) => {
         localStorage.setItem("carrito", JSON.stringify(carrito));
         const total = carrito.reduce((acumulador, articulo) => acumulador + articulo.precio, 0);
         document.getElementById("total-carrito").innerHTML = `${carrito.length}  - $${total}`;
+        document.getElementById("elementos-carrito").innerHTML = ""
+
+        carrito.forEach ((articulo) => {
+
+            document.getElementById("elementos-carrito").innerHTML += 
+            
+               `<tr>
+                  <th scope="row">${articulo.id}</th>
+                  <td><img src="${articulo.img}" style="width:75px"></td>
+                  <td>${articulo.titulo}</td>
+                  <td>$${articulo.precio}</td>
+                  <td><button class="boton-quitar" type="button">x</button></td>
+               </tr>`
+            
+            })
 
         Swal.fire({
-            title: 'Excelente!',
-            text: 'Agregaste el producto al carrito',
+            position: 'top-end',
             icon: 'success',
-            confirmButtonText: 'OK'
+            title: 'Producto agregado al Carrtio',
+            showConfirmButton: false,
+            timer: 1000
         })
-
     })
 });
+
+document.getElementById("vaciar-carrito").addEventListener('click', () => {
+
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "¡Esta acción no se podrá revertir!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            '¡Listo!',
+            'El Carrito ha sido vaciado.',
+            'success',
+          )
+
+          localStorage.clear()
+                  
+          location.reload()
+        }
+    })
+})
 
 
 fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')

@@ -11301,14 +11301,13 @@ textarea.form-control-lg {
 
 .navbar {
 
-height: 97px;
+height: 100px;
 
 }
 
 .section {
 
   background-image: url("Imagenes/fondo.jpg");
-
 
 }
 
@@ -11330,3 +11329,52 @@ font-weight: bold;
  font-size: 15px;
 
 }
+
+.boton-quitar {
+
+background-color: #FE2E2E;
+color: white;
+border: #FE2E2E;
+border-radius: 2px;
+
+}
+
+.boton-ver {
+
+  background-color: #14a924;
+
+}
+
+.boton-confirmar {
+
+  background-color: #14a924;
+
+}
+
+.confirmar {
+
+  text-decoration: none;
+  color: #000;
+
+}
+
+.formulario {
+
+  width: 700px;
+  padding-left: 50px;
+}
+
+.form-container {
+
+  padding-top: 30px;
+
+}
+
+.enviar {
+
+text-decoration: none;
+color: #000;
+
+}
+
+
